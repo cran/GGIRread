@@ -1,7 +1,6 @@
 library(GGIRread)
 context("reading GENEActiv binary data")
 test_that("GENEActivReader reads data from file correctly", {
-  skip_on_cran()
   binfile  = system.file("testfiles/GENEActiv_testfile.bin", package = "GGIRread")[1]
   cppdata = GENEActivReader(filename = binfile, start = 1, end = 1, progress_bar = TRUE)
   
@@ -20,7 +19,6 @@ test_that("GENEActivReader reads data from file correctly", {
 })
 
 test_that("readGENEActiv reads data from file correctly", {
-  skip_on_cran()
   old <- options(digits.secs = 3)
   binfile  = system.file("testfiles/GENEActiv_testfile.bin", package = "GGIRread")[1]
   rdata = readGENEActiv(filename = binfile, start = 1, end = 1, desiredtz = "Europe/London")
@@ -29,6 +27,10 @@ test_that("readGENEActiv reads data from file correctly", {
   expect_equal(rdata$header$ReadErrors, 0)
   expect_equal(rdata$header$SampleRate, 85.7)
   expect_equal(rdata$header$numBlocksTotal, 222048)
+  expect_equal(rdata$header$Handedness, "")
+  expect_equal(rdata$header$RecordingID, "")
+  expect_equal(rdata$header$DeviceLocation, "")
+  expect_equal(rdata$header$DeviceModel, "1.1")
   expect_equal(length(rdata$data$time), 300)
   expect_equal(length(rdata$data$x), 300)
   expect_equal(length(rdata$data$y), 300)
