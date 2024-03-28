@@ -127,18 +127,14 @@ Rcpp::List GENEActivReader(std::string filename, std::size_t start = 0, std::siz
         while (std::getline(input_file, line)) {
             ++blockCount;
             if (blockCount >= start && blockCount <= end) {
+                blockTime = lastvalue;
                 // header: "Recorded Data" (0), serialCode (1), seq num (2),
                 // blockTime (3), unassigned (4), temp (5), batteryVolt (6),
                 // deviceStatus (7), freq (8), data (9)
                 for (int i = 1; i < blockHeaderSize; i++) {
                     try {
                         std::getline(input_file, header);
-                        if (i == 3) {
-                            std::stringstream ss(header);
-                            int milliseconds;
-                            ss >> milliseconds;
-                            blockTime = lastvalue + milliseconds;
-                        } else if (i == 5) {
+                        if (i == 5) {
                             std::stringstream ss(header);
                             ss.ignore(max_streamsize, ':');
                             ss >> temperature;
@@ -168,7 +164,6 @@ Rcpp::List GENEActivReader(std::string filename, std::size_t start = 0, std::siz
                 double y = 0.0;
                 double z = 0.0;
                 double t = 0.0;
-
                 int i = 0;
                 while (hexPosition < data.size() - 1) {
                     try {
@@ -182,9 +177,8 @@ Rcpp::List GENEActivReader(std::string filename, std::size_t start = 0, std::siz
                         x = (xRaw * 100. - mfrOffset[0]) / mfrGain[0];
                         y = (yRaw * 100. - mfrOffset[1]) / mfrGain[1];
                         z = (zRaw * 100. - mfrOffset[2]) / mfrGain[2];
-
                         t = (double)blockTime + (double)i * (1.0 / freq) * 1000;  // Unix millis
-                        lastvalue = t;
+                        lastvalue = t + (1.0 / freq) * 1000;
                         time_array.push_back(t);
                         x_array.push_back(x);
                         y_array.push_back(y);
@@ -195,7 +189,12 @@ Rcpp::List GENEActivReader(std::string filename, std::size_t start = 0, std::siz
                         i++;
                     } catch (const std::exception& ex) {
                         errCounter++;
-                        Rcpp::Rcerr << "data error at i = %d: %s i: " << i << " " << ex.what() << "\n";
+                        std::string err_text = ex.what();
+
+                        // report any error other than the one expected at the end of file
+                        if (err_text.find("stoll: no conversion") == std::string::npos) {
+                            Rcpp::Rcerr << "data error at i = " << i << " : " << err_text << "\n";
+                        }
                         break;  // rest of this block could be corrupted
                     }
                 }
