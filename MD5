@@ -1,13 +1,13 @@
-16b842a43691049bccede1b995776328 *DESCRIPTION
+5559fc9725ee29431a1b9a890f2ef872 *DESCRIPTION
 957445510ece0bf783cc5c4c95974495 *NAMESPACE
 dcad47d7708f8a21ef59272a38bdc031 *R/RcppExports.R
-d3545b53f0ac131d20e54718ba0bfa43 *R/readAxivity.R
+d27d7b5c57c16a899ae91333e0ba303a *R/readAxivity.R
 6818af8a1eb3fdfbe02cce7ac9fd93a5 *R/readGENEActiv.R
 fdd9cd9f05d1b93053973cf6a76b478b *R/readGenea.R
 122a879086e5c444aae106c4a4eca212 *R/readWav.R
 52eae9d0bab5bec1f543aa5673ea36e0 *R/zzz.R
 b072604679a97e06922ae58991d4808b *README.md
-ee38c6d9b3d802575d6509928bbd7121 *inst/NEWS.Rd
+c1fcbf741d102d869ed27564f38cbe1e *inst/NEWS.Rd
 e1b96702a817baaaef2a1a52c2ae5f2f *inst/testfiles/GENEActiv_testfile.bin
 e29bc72556997d930507c0dba8135904 *inst/testfiles/ax3_testfile.cwa
 40ab4c978e07dcbc544020bc591620cd *inst/testfiles/ax3_testfile_corrupt_blocks_0_13_14_142_143_144.cwa
@@ -16,7 +16,7 @@ e29bc72556997d930507c0dba8135904 *inst/testfiles/ax3_testfile.cwa
 3898e642b0d46a94cc2b25739e0d55cf *inst/testfiles/genea_testfile.bin
 0a6fbc3ceea51b7467ca1edc655dbf02 *man/GENEActivReader.Rd
 91208a7517f2051d990fd84f3d25fb5a *man/GGIRread-package.Rd
-8dda643449cd33768a3f4ea7e0cdfee6 *man/readAxivity.Rd
+b8a3cd7161af41dabbf33495827f8331 *man/readAxivity.Rd
 8073b71070213f454b86e84d87669398 *man/readGENEActiv.Rd
 b2124746b2147f1eb6a05c647d4bdb74 *man/readGenea.Rd
 633f7d5c76c548b89d2fe5ceee8fa0bf *man/readWav.Rd
@@ -27,7 +27,7 @@ bc7d94652fe77480e46f7ec3ecf84466 *src/RcppExports.cpp
 c404c7e70735e563590bf275dad47a6a *src/init.c
 19f971110d18b2fca37a0fd46f57ec1d *src/resample.cpp
 dbb9904d581fabc902e10c73cb210698 *tests/testthat.R
-5cacb177b572caef27d4c8b7a3e0c09d *tests/testthat/test_readAxivity.R
+5d75903b16304469989bf82a6717ad54 *tests/testthat/test_readAxivity.R
 ae9218218360ca0644d596bed8fad23b *tests/testthat/test_readGENEActiv.R
 ae33b131ce6ff0efdaad0bfab2b61100 *tests/testthat/test_readGenea.R
 80b5e277bd4287376b00cf000418eec7 *tests/testthat/test_resample.R
