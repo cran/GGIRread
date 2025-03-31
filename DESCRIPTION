@@ -1,8 +1,8 @@
 Package: GGIRread
 Type: Package
 Title: Wearable Accelerometer Data File Readers
-Version: 1.0.3
-Date: 2025-03-07
+Version: 1.0.4
+Date: 2025-03-31
 Authors@R: c(person("Vincent T","van Hees",role=c("aut","cre"),
                   email="v.vanhees@accelting.com"),
              person(given = "Patrick",family = "Bos",
@@ -23,12 +23,12 @@ BugReports: https://github.com/wadpac/GGIRread/issues
 License: Apache License (== 2.0)
 Suggests: testthat
 Imports: matlab, bitops, Rcpp (>= 0.12.10), data.table, readxl,
-        jsonlite
+        jsonlite, digest
 Depends: stats, utils, R (>= 3.5.0)
 NeedsCompilation: yes
 LinkingTo: Rcpp
 ByteCompile: yes
-Packaged: 2025-03-07 14:13:58 UTC; vvanh
+Packaged: 2025-03-31 12:46:56 UTC; vvanh
 Author: Vincent T van Hees [aut, cre],
   Patrick Bos [aut] (<https://orcid.org/0000-0002-6033-960X>),
   Lena Kushleyeva [ctb],
@@ -39,4 +39,4 @@ Author: Vincent T van Hees [aut, cre],
   Medical Research Council UK [cph, fnd],
   Accelting [cph, fnd]
 Repository: CRAN
-Date/Publication: 2025-03-07 16:30:09 UTC
+Date/Publication: 2025-03-31 13:20:02 UTC
