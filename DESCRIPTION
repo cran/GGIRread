@@ -1,8 +1,8 @@
 Package: GGIRread
 Type: Package
 Title: Wearable Accelerometer Data File Readers
-Version: 1.0.5
-Date: 2025-05-09
+Version: 1.0.7
+Date: 2025-11-26
 Authors@R: c(person("Vincent T","van Hees",role=c("aut","cre"),
                   email="v.vanhees@accelting.com"),
              person(given = "Patrick",family = "Bos",
@@ -28,7 +28,7 @@ Depends: stats, utils, R (>= 3.5.0)
 NeedsCompilation: yes
 LinkingTo: Rcpp
 ByteCompile: yes
-Packaged: 2025-05-09 11:58:57 UTC; vvanh
+Packaged: 2025-11-26 08:58:54 UTC; vvanh
 Author: Vincent T van Hees [aut, cre],
   Patrick Bos [aut] (ORCID: <https://orcid.org/0000-0002-6033-960X>),
   Lena Kushleyeva [ctb],
@@ -39,4 +39,4 @@ Author: Vincent T van Hees [aut, cre],
   Medical Research Council UK [cph, fnd],
   Accelting [cph, fnd]
 Repository: CRAN
-Date/Publication: 2025-05-09 14:50:13 UTC
+Date/Publication: 2025-11-26 09:20:10 UTC
